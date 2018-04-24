@@ -1,0 +1,12 @@
+{
+    "todoist":{
+        "api_key":"APIキー",
+        "weekly":[
+          {"project":"プロジェクト名" , "task":"タスク名"},
+          {"project":"プロジェクト名" , "task":"タスク名"}
+        ],
+        "monthly":[
+          {"project":"プロジェクト名" , "task":"タスク名"}
+        ]
+    }
+}
