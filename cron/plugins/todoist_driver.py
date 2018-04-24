@@ -20,7 +20,9 @@ class TodoistDriver:
     config.jsonからAPIキーの取得
     '''
     def get_apikey( self ):
-        config = Config('config.json')
+        # config = Config('config.json')
+        config = Config('../../config.json')
+
         data = config.todoist()
         self._token = data['api_key']
 
