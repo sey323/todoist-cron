@@ -8,5 +8,10 @@
         "monthly":[
           {"project":"プロジェクト名" , "task":"タスク名"}
         ]
+    },
+    "slcak":{
+      "api_key":"",
+      "name":"",
+      "channel":""
     }
 }

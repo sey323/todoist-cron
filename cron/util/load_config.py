@@ -15,22 +15,11 @@ class Config:
         f.close()
         return json_data
 
-    def email( self ):
-        return self._data["email"]
+    def slack( self ):
+        return self._data["slack"]
 
     def todoist(self):
         return self._data["todoist"]
-
-    def toggl(self):
-        return self._data["toggl"]
-
-    def slack_bot(self):
-        return self._data["slack_bot"]
-
-    def docomo(self):
-        return self._data["docomo"]
-
-
 
 #config = Config()
 #print(config.todoist())

@@ -14,14 +14,13 @@ class TodoistDriver:
         self.usr = _usr
         self.projects = None
 
-        #self.get_credentials()
         self.get_apikey()
 
     '''
     config.jsonからAPIキーの取得
     '''
     def get_apikey( self ):
-        config = Config('../../config.json')
+        config = Config('config.json')
         data = config.todoist()
         self._token = data['api_key']
 
