@@ -81,7 +81,7 @@ class TodoistDriver:
                         if t.checked == 0:# 終了済みのタスクでない時．
                             emb_content.append('\n> ・'+t.date_string+'\t'+t.content)
                 if len(emb_content) > 0:
-                        emb_content.insert(0, '\n> ``'+e[2]+'``:')
+                        emb_content.insert(0, '\n> `'+e[2]+'`:')
                 content.extend(emb_content)
 
         return content
