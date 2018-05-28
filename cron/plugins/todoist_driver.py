@@ -138,3 +138,15 @@ class TodoistDriver:
                 return project
 
         return None
+
+    '''
+    タスクの追加
+    '''
+    def add_task( self , project_name , task_name , date = None ):
+        project = self.find_project( project_name )
+        if project is None:
+            return 'No Project'
+
+        task = project.add_task( task_name , date )
+
+        return task_name +' is Adding'
