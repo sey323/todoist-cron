@@ -13,7 +13,7 @@ todoist = TodoistDriver()
 def add_monthly():
     # 日付の取得
     today = datetime.date.today()
-    after_month = today + datetime.timedelta(weeks=+1)
+    after_month = today + datetime.timedelta(weeks=+4)
     # Jsonから追加するタスクを取得．
     config = Config('../config.json')
     data = config.todoist()
