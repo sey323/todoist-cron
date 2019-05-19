@@ -1,5 +1,8 @@
-0 6 * * 1 root /scripts/add_weekly.sh >> /var/log/cron.log 2>&1
-0 6 1 * * root /scripts/add_monthly.sh >> /var/log/cron.log 2>&1
-0 8 * * * root /scripts/task_alert.sh >> /var/log/cron.log 2>&1
-#* * * * * root /scripts/task_alert.sh >> /var/log/test.log 2>&1
+LANG=ja_JP.UTF-8
+
+0 6 * * 1 . /root/env.sh; python3 /cron/add_monthly.py>> /var/log/cron.log 2>&1
+0 6 1 * * . /root/env.sh; python3 /cron/add_weekly.py>> /var/log/cron.log 2>&1
+0 8 * * * . /root/env.sh; python3 /cron/task_alert.py>> /var/log/cron.log 2>&1
+
+# * * * * * . /root/env.sh; python3 /cron/task_alert.py >> /var/log/test.log 2>&1
 # An empty line is required at the end of this file for a valid cron file.
