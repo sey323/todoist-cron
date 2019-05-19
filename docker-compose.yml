@@ -1,3 +1,5 @@
-loki:
+cron:
   build: .
+  environment:
+      - "TZ=Japan"
   restart: always
