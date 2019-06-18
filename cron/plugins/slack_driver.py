@@ -1,6 +1,5 @@
 import sys
 from slacker import Slacker
-import plugins.todoist_driver as td
 from util.load_config import Config
 
 
@@ -20,8 +19,8 @@ class SlackDriver:
     config.jsonからAPIキーの取得
     '''
     def get_apikey( self ):
-        # config = Config('config.json')
         config = Config('../../config.json')
+        #config = Config('config.json') #実験用
         data = config.slack()
         self._token = data['api_key']
         self._usr_name = data['name']

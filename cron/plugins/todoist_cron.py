@@ -1,13 +1,13 @@
 # coding: utf-8
 import sys ,os
-sys.path.append(os.getcwd())
 import datetime
+import requests
+sys.path.append(os.getcwd())
 
 # 自作モジュールの読み込み
-from plugins.todoist_driver import TodoistDriver
 from util.load_config import Config
 
-todoist = TodoistDriver()
+API_URL = 'http://192.168.8.85:85/'
 
 
 def add_monthly():
@@ -19,7 +19,10 @@ def add_monthly():
     data = config.todoist()
 
     for d in data['monthly']:
-        todoist.add_task( d['project'] , d['task'] + "_" + str(today) , after_month )
+        response = requests.post( API_URL + 'task/' + d['project'] + \
+                                            '/' + d['task'] + "_" + str(today) + \
+                                            '/' + str(after_month) )
+
 
 def add_weekly():
     # 日付の取得
@@ -30,4 +33,6 @@ def add_weekly():
     data = config.todoist()
 
     for d in data['weekly']:
-        todoist.add_task( d['project'] , d['task'] + "_" + str(today) , after_week )
+         response = requests.post( API_URL + 'task/' + d['project'] + \
+                                             '/' + d['task'] + "_" + str(today) + \
+                                             '/' + str(after_week) )
