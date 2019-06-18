@@ -1,7 +1,7 @@
 LANG=ja_JP.UTF-8
 
-0 6 * * 1 . /root/env.sh; python3 /cron/add_monthly.py>> /var/log/cron.log 2>&1
-0 6 1 * * . /root/env.sh; python3 /cron/add_weekly.py>> /var/log/cron.log 2>&1
+0 6 * * 1 . /root/env.sh; python3 /cron/add_weekly.py>> /var/log/cron.log 2>&1
+0 6 1 * * . /root/env.sh; python3 /cron/add_monthly.py>> /var/log/cron.log 2>&1
 0 8 * * * . /root/env.sh; python3 /cron/task_alert.py>> /var/log/cron.log 2>&1
 
 # * * * * * . /root/env.sh; python3 /cron/task_alert.py >> /var/log/test.log 2>&1
