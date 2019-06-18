@@ -1,4 +1,4 @@
-NAME=loki
+NAME=thor
 
 run:
 	docker-compose build
