@@ -1,16 +1,13 @@
 # encoding=utf8
 import sys ,os
+import requests
 sys.path.append(os.getcwd())
-from plugins.todoist_driver import TodoistDriver
 from plugins.slack_driver import SlackDriver
 
 # 初期化
 sk = SlackDriver()
-todoist = TodoistDriver()
+API_URL = 'http://192.168.8.85:85/'
 
-content = todoist.get_deadline()
-send_text = "現在のタスクを通知します．\n"
-for i in content:
-        send_text += str(i)
-
-sk.slack_call( send_text )
+response = requests.get( API_URL + 'todo' )
+print(response)
+sk.slack_call( response.text )
